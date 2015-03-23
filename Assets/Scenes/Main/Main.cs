@@ -6,12 +6,53 @@ public class Main : MonoBehaviour {
   public void ChangeScene(string name) {
     Application.LoadLevel(name);
   }
+  
+	[SerializeField]
+	Texture2D _mainBg;
 
-  // Use this for initialization
-  void Start() {
-  }
+	[SerializeField]
+	Texture2D _craftButton;
 
-  // Update is called once per frame
-  void Update() {
-  }
+	[SerializeField]
+	Texture2D _battleButton;
+
+	[SerializeField]
+	Texture2D _practiceButton;
+	
+	[SerializeField]
+	Texture2D _optionsButton;
+
+	[SerializeField]
+	Texture2D _exitButton;
+
+
+	void OnGUI()
+	{
+		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), _mainBg);
+
+		if (GUI.Button(new Rect(50, 250, 270, _craftButton.height), _craftButton))
+		{
+			Application.LoadLevel("Craft");
+		}
+
+		if (GUI.Button(new Rect(50, 250 + _battleButton.height + 10, 270, _battleButton.height), _battleButton))
+		{
+			//Application.LoadLevel("battle");
+		}
+
+		if (GUI.Button(new Rect(50, 250 + (2 * _practiceButton.height) + 20, 270, _practiceButton.height), _practiceButton))
+		{
+			//Application.LoadLevel("practice");
+		}
+
+		if (GUI.Button(new Rect(50, 250 + (3 * _optionsButton.height) + 30, 270, _optionsButton.height), _optionsButton))
+		{
+			//Application.LoadLevel("options");
+		}
+
+		if (GUI.Button(new Rect(50, 250 + (4 * _exitButton.height) + 40, 270, _exitButton.height), _exitButton))
+		{
+			Application.LoadLevel("Exit");
+		}
+	}
 }
