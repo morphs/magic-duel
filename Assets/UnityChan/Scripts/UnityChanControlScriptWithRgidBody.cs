@@ -1,4 +1,4 @@
-﻿//
+//
 // Mecanimのアニメーションデータが、原点で移動しない場合の Rigidbody付きコントローラ
 // サンプル
 // 2014/03/13 N.Kobyasahi
@@ -176,6 +176,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 			if (Input.GetButtonDown("Rest")) {
 				anim.SetBool("Rest", true);
 			}
+
 		}
 		// REST中の処理
 		// 現在のベースレイヤーがrestStateの時
@@ -188,6 +189,8 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 				anim.SetBool("Rest", false);
 			}
 		}
+
+
 	}
 
 	void OnGUI()

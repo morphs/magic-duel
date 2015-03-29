@@ -43,6 +43,8 @@ GameObject:
   - 4: {fileID: 400004}
   - 198: {fileID: 19800002}
   - 199: {fileID: 19900002}
+  - 54: {fileID: 5470444}
+  - 135: {fileID: 13509354}
   m_Layer: 0
   m_Name: frameBall
   m_TagString: Untagged
@@ -118,6 +120,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 2
+--- !u!54 &5470444
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  serializedVersion: 2
+  m_Mass: .200000003
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -153,6 +170,18 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!135 &13509354
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2100,18 +2129,18 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
-    type: 0
+    enabled: 1
+    type: 1
     plane0: {fileID: 0}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
     plane3: {fileID: 0}
     plane4: {fileID: 0}
     plane5: {fileID: 0}
-    dampen: 0
-    bounce: 1
-    energyLossOnCollision: 0
-    minKillSpeed: 0
+    dampen: 1
+    bounce: 0
+    energyLossOnCollision: 1
+    minKillSpeed: .5
     particleRadius: .00999999978
     collidesWith:
       serializedVersion: 2
