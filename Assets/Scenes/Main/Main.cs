@@ -37,7 +37,7 @@ public class Main : MonoBehaviour {
 
 		if (GUI.Button(new Rect(50, 250 + _battleButton.height + 10, 270, _battleButton.height), _battleButton))
 		{
-			//Application.LoadLevel("battle");
+			Application.LoadLevel("Battle");
 		}
 
 		if (GUI.Button(new Rect(50, 250 + (2 * _practiceButton.height) + 20, 270, _practiceButton.height), _practiceButton))

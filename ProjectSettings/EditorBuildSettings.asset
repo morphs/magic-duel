@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Main/Main.unity
   - enabled: 1
     path: Assets/Scenes/Craft/Craft.unity
+  - enabled: 1
+    path: Assets/Scenes/Battle/Battle.unity

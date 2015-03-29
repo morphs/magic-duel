@@ -92,7 +92,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
-			if (currentBaseState.nameHash == locoState){
+			if (currentBaseState.nameHash != jumpState){
 				//ステート遷移中でなかったらジャンプできる
 				if(!anim.IsInTransition(0))
 				{
@@ -104,7 +104,10 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		
 
 		// 上下のキー入力でキャラクターを移動させる
-		transform.localPosition += velocity * Time.fixedDeltaTime;
+
+			transform.localPosition += velocity * Time.fixedDeltaTime;
+
+
 
 		// 左右のキー入力でキャラクタをY軸で旋回させる
 		transform.Rotate(0, h * rotateSpeed, 0);	
@@ -170,7 +173,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 				resetCollider();
 			}
 			// スペースキーを入力したらRest状態になる
-			if (Input.GetButtonDown("Jump")) {
+			if (Input.GetButtonDown("Rest")) {
 				anim.SetBool("Rest", true);
 			}
 		}
@@ -192,8 +195,8 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");
 		GUI.Label(new Rect(Screen.width -245,30,250,30),"Up/Down Arrow : Go Forwald/Go Back");
 		GUI.Label(new Rect(Screen.width -245,50,250,30),"Left/Right Arrow : Turn Left/Turn Right");
-		GUI.Label(new Rect(Screen.width -245,70,250,30),"Hit Space key while Running : Jump");
-		GUI.Label(new Rect(Screen.width -245,90,250,30),"Hit Spase key while Stopping : Rest");
+		GUI.Label(new Rect(Screen.width -245,70,250,30),"Hit Space key : Jump");
+		GUI.Label(new Rect(Screen.width -245,90,250,30),"Hit t key : Rest");
 		GUI.Label(new Rect(Screen.width -245,110,250,30),"Left Control : Front Camera");
 		GUI.Label(new Rect(Screen.width -245,130,250,30),"Alt : LookAt Camera");
 	}
