@@ -171,11 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainBg: {fileID: 2800000, guid: 242167aa74b615f4c981bf3fe74e4ba1, type: 3}
-  _craftButton: {fileID: 2800000, guid: 6b288db1050d6004dabd0f016b3e35a4, type: 3}
-  _battleButton: {fileID: 2800000, guid: cbe61f566afabb7458404abadbd5c7d7, type: 3}
-  _practiceButton: {fileID: 2800000, guid: e8aebdc8456b28d48a9f657a4bdc2fe8, type: 3}
-  _optionsButton: {fileID: 2800000, guid: 0af2eb58737ad1442b6c416d006cdd9b, type: 3}
-  _exitButton: {fileID: 2800000, guid: ac6d9939d6c337341a47eb5136dce82a, type: 3}
   _exitBg: {fileID: 2800000, guid: f3d1a65d4e320a04f8e72ab3665608b1, type: 3}
   _certeza: {fileID: 2800000, guid: f35562ce4f29dc24db934f664b38e58e, type: 3}
   _simButton: {fileID: 2800000, guid: e73cd720b0678514683066f0ed36b094, type: 3}
