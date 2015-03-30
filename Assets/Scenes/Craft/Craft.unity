@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _craftMenuBg: {fileID: 2800000, guid: 93a840f0707d8cd4b8b4fafeb764d46b, type: 3}
   _craftSubTitle: {fileID: 2800000, guid: bb675a1e85d0a7f43a5cd9b2918b7f91, type: 3}
+  _scrollBg: {fileID: 2800000, guid: 05e0e4a35df1f3f45ba4d90857a4a600, type: 3}
   _create: {fileID: 2800000, guid: 43abed72b8da5ee44ab146885d56347b, type: 3}
   _edit: {fileID: 2800000, guid: 5cb8482fd301f4e458ca5d6564f03f33, type: 3}
   _delete: {fileID: 2800000, guid: a6cb2d69f6a147049ab6427200a7fed3, type: 3}
