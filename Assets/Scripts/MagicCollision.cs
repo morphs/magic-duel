@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MagicCollision : MonoBehaviour {
 
-	void onCollisionEnter(Collision col){
+	void OnCollisionEnter(Collision col){
 		Debug.Log (gameObject.ToString());
-		Destroy (gameObject.gameObject,0); 
+		print (gameObject.ToString());
+		if(col.gameObject.tag =="Player"){
+			HealthControl.damage((float)0.1f);
+			//Image im = GetComponent<Image>();
+
+		}
+
+		Destroy (gameObject.gameObject,0);
 	}
 	// Use this for initialization
 	void Start () {
