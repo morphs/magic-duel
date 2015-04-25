@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+[RequireComponent(typeof (HealthControl))]
 public class MagicCollision : MonoBehaviour {
 
+	public HealthControl healthc;
 	void OnCollisionEnter(Collision col){
 		Debug.Log (gameObject.ToString());
 		print (gameObject.ToString());
 		if(col.gameObject.tag =="Player"){
-			HealthControl.damage((float)0.1f);
+			healthc =  GameObject.FindGameObjectWithTag ("Health").GetComponent<HealthControl> ();
+
+			healthc.damage((float)0.5f);
 			//Image im = GetComponent<Image>();
 
 		}
