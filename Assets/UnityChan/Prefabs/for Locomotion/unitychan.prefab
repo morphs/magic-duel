@@ -2577,6 +2577,22 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: unitychan
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &116186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 416186}
+  - 114: {fileID: 11416186}
+  m_Layer: 0
+  m_Name: MagicSender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3232,8 +3248,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -22.9909992, y: 6.3829999, z: -45.6199989}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 400224}
   - {fileID: 400000}
@@ -3241,6 +3257,7 @@ Transform:
   - {fileID: 400006}
   - {fileID: 400004}
   - {fileID: 400002}
+  - {fileID: 416186}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400102
@@ -3274,7 +3291,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100104}
-  m_LocalRotation: {x: -.0937465429, y: .697855175, z: .707469046, w: .0608067624}
+  m_LocalRotation: {x: -.0937465355, y: .697855115, z: .707468987, w: .060806755}
   m_LocalPosition: {x: -.0554340295, y: .00173068431, z: .0986537337}
   m_LocalScale: {x: 1.00000036, y: 1.0000006, z: 1.00000048}
   m_Children:
@@ -4791,6 +4808,18 @@ Transform:
   - {fileID: 400168}
   m_Father: {fileID: 400302}
   m_RootOrder: 0
+--- !u!4 &416186
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.03600001, z: .501999974}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400100}
+  m_RootOrder: 6
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -4971,6 +5000,21 @@ MonoBehaviour:
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
+--- !u!114 &11416186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72efdd843b9c3bc45b9732296ef9dabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magic1: {fileID: 5470444, guid: 6836f5eaa96f845c4ac0909f84272556, type: 2}
+  magic2: {fileID: 5424710, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 2}
+  magic3: {fileID: 5404298, guid: 200e650fba6c8492b87e96e4bc273510, type: 2}
+  magic4: {fileID: 5486950, guid: 906ef3748a66347cfb2d72de10092732, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
