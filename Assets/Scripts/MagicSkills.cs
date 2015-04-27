@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof (UnityChanControlScriptWithRgidBody))]
 public class MagicSkills : MonoBehaviour {
 
 	public Rigidbody magic1;
@@ -12,7 +12,7 @@ public class MagicSkills : MonoBehaviour {
 	float cd2 = 5;
 	float cd3 = 5;
 	float cd4 = 5;
-
+	bool block = false;
 	float timeStamp1 = 0;
 	float timeStamp2 = 0;
 	float timeStamp3 = 0;
@@ -24,8 +24,10 @@ public class MagicSkills : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		block = GameObject.FindGameObjectWithTag ("Player").GetComponent<UnityChanControlScriptWithRgidBody> ().getBlockInput();
 		//Se for a magia 1 
-		if (Input.GetButton("Slot1")){
+		if (Input.GetButton("Slot1") && !block){
 
 			if(timeStamp1 <=Time.time){
 				Rigidbody clone = (Rigidbody) Instantiate(magic1,transform.position,transform.rotation);
@@ -37,7 +39,7 @@ public class MagicSkills : MonoBehaviour {
 
 		}
 		//Se for a magia 2
-		if (Input.GetButton("Slot2")){
+		if (Input.GetButton("Slot2")&& !block){
 			if(timeStamp2 <=Time.time){
 				Rigidbody clone = (Rigidbody) Instantiate(magic2,transform.position,transform.rotation);
 				clone.AddForce(new Vector3(0,0,speed));
@@ -47,7 +49,7 @@ public class MagicSkills : MonoBehaviour {
 			}
 		}
 		//Se for a magia 3
-		if (Input.GetButton("Slot3")){
+		if (Input.GetButton("Slot3")&& !block){
 			if(timeStamp3 <=Time.time){
 				Rigidbody clone = (Rigidbody) Instantiate(magic3,transform.position,transform.rotation);
 				clone.velocity = transform.TransformDirection(new Vector3(0,0,speed));
@@ -57,7 +59,7 @@ public class MagicSkills : MonoBehaviour {
 			}
 		}
 		//Se for a magia 4
-		if (Input.GetButton("Slot4")){
+		if (Input.GetButton("Slot4")&& !block){
 			if(timeStamp4 <=Time.time){
 				Rigidbody clone = (Rigidbody) Instantiate(magic4,transform.position,transform.rotation);
 				clone.AddForce(new Vector3(0,0,speed));

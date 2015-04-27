@@ -9,7 +9,7 @@ public class MagicCollision : MonoBehaviour {
 		Debug.Log (gameObject.ToString());
 		print (gameObject.ToString());
 		if(col.gameObject.tag =="Player"){
-			healthc =  GameObject.FindGameObjectWithTag ("Health").GetComponent<HealthControl> ();
+			healthc =  GameObject.FindGameObjectWithTag ("Player").GetComponent<HealthControl> ();
 
 			healthc.damage((float)0.5f);
 			//Image im = GetComponent<Image>();

@@ -41,7 +41,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	
 	private Animator anim;							// キャラにアタッチされるアニメーターへの参照
 	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
-
+	public bool taichiscript = false; 
 	private GameObject cameraObject;	// メインカメラへの参照
 		
 	private bool blockJump = false;
@@ -55,13 +55,24 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	static int restState = Animator.StringToHash("Base Layer.Rest");
 	static int deathState = Animator.StringToHash("Base Layer.Death");
 	static int hitState = Animator.StringToHash("Base Layer.Hit");
-	
 
+	public bool getBlockInput(){
+		return blockInput;
+	}
+	public void setTaichiScript(bool var){
+		taichiscript = var;
+	}
 // 初期化
 	void Start ()
 	{
 		// Animatorコンポーネントを取得する
 		anim = GetComponent<Animator>();
+
+		if(anim.avatar == null){
+			print ("oi");
+
+		}
+
 		// CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
 		col = GetComponent<CapsuleCollider>();
 		rb = GetComponent<Rigidbody>();
@@ -101,7 +112,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 			}
 			
 			if (Input.GetButtonDown ("Jump") && !blockJump) {	// スペースキーを入力したら
-				blockJump = true;
+
 					 
 				//アニメーションのステートがLocomotionの最中のみジャンプできる
 				if (currentBaseState.nameHash != jumpState) {
@@ -109,6 +120,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 					if (!anim.IsInTransition (0)) {
 						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
 						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
+						blockJump = true;
 					}
 				}
 			}
@@ -205,7 +217,12 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 			if (anim.GetFloat ("Health") <= 0.001) {
 				blockInput = true;
 				blockJump = true;
-				anim.speed = (float)0.2;
+				if(taichiscript){
+					anim.speed = (float)0.04;
+				}else{
+
+					anim.speed = (float)0.2;
+				}
 			}
 		
 		
@@ -221,7 +238,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 				anim.SetFloat("Health",1.0f);
 				Vector3 last_Position = new Vector3 ((float)-22.995, (float)6.348, (float)(-45.62));
 				transform.position = last_Position;
-				HealthControl hc = GameObject.FindGameObjectWithTag("Health").GetComponent<HealthControl>();
+				HealthControl hc = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthControl>();
 				hc.damage (-1.0f);
 			}
 		}
