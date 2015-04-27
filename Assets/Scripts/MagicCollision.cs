@@ -8,15 +8,20 @@ public class MagicCollision : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		Debug.Log (gameObject.ToString());
 		print (gameObject.ToString());
-		if(col.gameObject.tag =="Player"){
-			healthc =  GameObject.FindGameObjectWithTag ("Player").GetComponent<HealthControl> ();
+		if(col.gameObject.tag =="Enemy"){
+			healthc =  GameObject.FindGameObjectWithTag ("Enemy").GetComponent<HealthControl> ();
 
 			healthc.damage((float)0.5f);
 			//Image im = GetComponent<Image>();
-
+			Destroy (gameObject.gameObject,0);
+		}else if(col.gameObject.tag =="ECrystal"){
+			string texto =  GameObject.FindGameObjectWithTag ("EPoints").GetComponent<Text>().text;
+			float temp = float.Parse(texto)-(float)0.5f;
+			GameObject.FindGameObjectWithTag ("EPoints").GetComponent<Text>().text=""+ temp;
+			Destroy (gameObject.gameObject,0);
 		}
 
-		Destroy (gameObject.gameObject,0);
+
 	}
 	// Use this for initialization
 	void Start () {

@@ -59,6 +59,9 @@ public class CharacterSelectionMenu : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("Player").GetComponent<UnityChanControlScriptWithRgidBody> ().setTaichiScript(true);
 			thirdpc.smooth = 33f;
 			render = false;
+			//Setando o pilar amigo e inimigo
+			GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
+			GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
 		}
 		if(GUI.Button (new Rect(560,40,500,400),ri2)){
 			playerCharacters[0]= new PlayerCharacter(1,"Player",true,player2);
@@ -70,7 +73,9 @@ public class CharacterSelectionMenu : MonoBehaviour {
 			//player2.a
 			thirdpc.smooth = 33f;
 			render = false;
-
+			//Setando o pilar amigo e inimigo
+			GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
+			GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
 			
 		}
 	}

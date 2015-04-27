@@ -51,8 +51,7 @@ public class HealthControl : MonoBehaviour {
 			imBarHealth.fillAmount -= health;
 		
 			if (imBarHealth.fillAmount <= 0) {
-				Debug.Log ("Death");
-				//
+
 				//Vector3 last_Position = GameObject.FindWithTag("Player").transform.position;
 				Vector3 last_Position = new Vector3 ((float)-22.995, (float)6.348, (float)(-45.62));
 			} else {
@@ -66,6 +65,5 @@ public class HealthControl : MonoBehaviour {
 
 	public void damage(float h){
 		health = h;
-
 	}
 }
