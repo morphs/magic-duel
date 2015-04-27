@@ -48,6 +48,8 @@ public class magicCraft : MonoBehaviour {
 	float distance;
 	float velocity;
 
+	GUIStyle gs;
+
 	// Use this for initialization
 	void Start () {
 		_currentPoints = _maxPoints;
@@ -57,6 +59,8 @@ public class magicCraft : MonoBehaviour {
 		distance = _distance;
 		velocity = _velocity;
 
+		gs = new GUIStyle ();
+		gs.fontSize = 16;
 		//load data
 		_currentPoints = PlayerPrefs.GetFloat ("Points", 1.0f);
 		_magicName = PlayerPrefs.GetString ("Magic Name", "");
@@ -95,15 +99,19 @@ public class magicCraft : MonoBehaviour {
 
 
 		//horizontal slider para os atributos
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width / 7, Screen.height / 5 + 5, Screen.width / 4, 20), "Power",gs); 
 		_power = GUI.HorizontalSlider(new Rect(Screen.width/2 + Screen.width/7, Screen.height/5 + 30 , Screen.width/4, 20), _power, 1.0f, 100.0f );
 		PlayerPrefs.SetFloat ("Power", _power);
 
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width / 7, Screen.height / 5 + 85, Screen.width / 4, 20), "Size",gs); 
 		_size = GUI.HorizontalSlider(new Rect(Screen.width/2 + Screen.width/7, Screen.height/5 + 110 ,Screen.width/4, 20), _size, 1.0f, 100.0f );
 		PlayerPrefs.SetFloat ("Size", _size);
 
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width / 7, Screen.height / 5 + + 165, Screen.width / 4, 20), "Distance",gs); 
 		_distance = GUI.HorizontalSlider(new Rect(Screen.width/2 + Screen.width/7, Screen.height/5 + 190 ,Screen.width/4, 20), _distance, 1.0f, 100.0f );
 		PlayerPrefs.SetFloat ("Distance", _distance);
 
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width / 7, Screen.height / 5 + 245, Screen.width / 4, 20), "Velocity",gs); 
 		_velocity = GUI.HorizontalSlider(new Rect(Screen.width/2 + Screen.width/7, Screen.height/5 + 270 ,Screen.width/4, 20), _velocity, 1.0f, 25.0f );
 		PlayerPrefs.SetFloat ("Velocity", _velocity);
 

@@ -18,7 +18,7 @@ public class MagicCollision : MonoBehaviour {
 			string texto =  GameObject.FindGameObjectWithTag ("EPoints").GetComponent<Text>().text;
 			float temp = float.Parse(texto)-(float)0.5f;
 			GameObject.FindGameObjectWithTag ("EPoints").GetComponent<Text>().text=""+ temp;
-			Destroy (gameObject.gameObject,0);
+			Destroy (gameObject.gameObject,0);	
 		}
 
 
