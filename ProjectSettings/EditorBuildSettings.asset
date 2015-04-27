@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Craft/Craft.unity
   - enabled: 1
     path: Assets/Scenes/Battle/Battle.unity
+  - enabled: 1
+    path: Assets/Scenes/Exit/Exit.unity

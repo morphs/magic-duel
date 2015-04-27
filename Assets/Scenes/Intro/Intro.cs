@@ -26,8 +26,8 @@ public class Intro : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetButton ("Fire1")) {
-			if(timeStamp<=Time.time){
-				switch(count){
+			if (timeStamp <= Time.time) {
+				switch (count) {
 				case 0:
 					audio.clip = _1;
 					break;
@@ -36,33 +36,35 @@ public class Intro : MonoBehaviour {
 					break;
 				case 2:
 					audio.clip = _3;
-					GameObject panel = GameObject.Find("Panel1");
-					panel.SetActive(false);
+					GameObject panel = GameObject.Find ("Panel1");
+					panel.SetActive (false);
 					break;
 				case 3:
 					audio.clip = _4;
-					GameObject panel2 = GameObject.Find("Panel2");
-					panel2.SetActive(false);
+					GameObject panel2 = GameObject.Find ("Panel2");
+					panel2.SetActive (false);
 					break;
 				case 4:
 					audio.clip = _5;
-					GameObject panel3 = GameObject.Find("Panel3");
-					panel3.SetActive(false);
+					GameObject panel3 = GameObject.Find ("Panel3");
+					panel3.SetActive (false);
 					break;
 				case 5:
 					audio.clip = _6;
 					break;
 				case 6:
-					Application.LoadLevel("Main");
+					Application.LoadLevel ("Main");
 					break;
 				}
-				count +=1;
+				count += 1;
 				audio.Play ();
 				timeStamp = Time.time + 2;
 			}
 
 
 		}
-
+		if (Input.GetKeyDown ("escape")) {
+			Application.LoadLevel ("Main");
+		}
 	}
 }
