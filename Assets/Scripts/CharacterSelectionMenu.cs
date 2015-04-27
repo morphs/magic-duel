@@ -49,8 +49,8 @@ public class CharacterSelectionMenu : MonoBehaviour {
 	
 	void DoMyWindow(int windowID){
 		if(GUI.Button (new Rect(10,40,500,400),ri1)){
-			ri1.wrapMode = TextureWrapMode.Clamp;
 			playerCharacters[0]= new PlayerCharacter(1,"Player",true,player1);
+			playerCharacters[1]= new PlayerCharacter(2,"Enemy",true,player2);
 			Rigidbody t = (Rigidbody) Instantiate(playerCharacters[0].body,transform.position,transform.rotation) ;
 			playerrb = t.gameObject;
 			ThirdPersonCamera thirdpc = GameObject.FindGameObjectWithTag("MainCamera").AddComponent("ThirdPersonCamera") as ThirdPersonCamera;
@@ -60,11 +60,17 @@ public class CharacterSelectionMenu : MonoBehaviour {
 			thirdpc.smooth = 33f;
 			render = false;
 			//Setando o pilar amigo e inimigo
-			GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
-			GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
+			if(GameObject.FindGameObjectWithTag("Pillar1") != null){
+				GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
+				GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
+			}else{
+				playerrb.AddComponent ("Practice");
+			}
+
 		}
 		if(GUI.Button (new Rect(560,40,500,400),ri2)){
 			playerCharacters[0]= new PlayerCharacter(1,"Player",true,player2);
+			playerCharacters[1]= new PlayerCharacter(2,"Enemy",true,player1);
 			Rigidbody t = (Rigidbody) Instantiate(playerCharacters[0].body,transform.position,transform.rotation) ;
 			playerrb = t.gameObject;
 			ThirdPersonCamera thirdpc = GameObject.FindGameObjectWithTag("MainCamera").AddComponent("ThirdPersonCamera") as ThirdPersonCamera;
@@ -74,9 +80,12 @@ public class CharacterSelectionMenu : MonoBehaviour {
 			thirdpc.smooth = 33f;
 			render = false;
 			//Setando o pilar amigo e inimigo
-			GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
-			GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
-			
+			if(GameObject.FindGameObjectWithTag("Pillar1") != null){
+				GameObject.FindGameObjectWithTag("Pillar1").tag = "FCrystal";
+				GameObject.FindGameObjectWithTag("Pillar2").tag = "ECrystal" ;
+			}else{
+				playerrb.AddComponent ("Practice");
+			}
 		}
 	}
 	// Use this for initialization

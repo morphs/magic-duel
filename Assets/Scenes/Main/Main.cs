@@ -42,7 +42,7 @@ public class Main : MonoBehaviour {
 
 		if (GUI.Button(new Rect(50, 250 + (2 * _practiceButton.height) + 20, 270, _practiceButton.height), _practiceButton))
 		{
-			//Application.LoadLevel("practice");
+			Application.LoadLevel("Practice");
 		}
 
 		if (GUI.Button(new Rect(50, 250 + (3 * _optionsButton.height) + 30, 270, _optionsButton.height), _optionsButton))
